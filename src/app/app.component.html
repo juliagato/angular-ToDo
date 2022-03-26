@@ -1,10 +1,17 @@
-<h1>To Do List</h1>
+<div>
+  <h1>Lista de Tarefas:</h1>
 
-<input type="text" [(ngModel)]="item" />
-<button (click)="addItem()">ADD</button>
+  <input type="text" [(ngModel)]="item" />
+  <button (click)="addItem()">Adicionar</button>
 
-<ul>
-  <li *ngFor="let n of array; let i = index">
-    {{ n }} <button (click)="removeItem(i)">X</button>
-  </li>
-</ul>
+  <ul>
+    <li *ngFor="let n of array; let i = index">
+      {{ n }} <button (click)="removeItem(i)">Concluída</button>
+    </li>
+  </ul>
+</div>
+<hr />
+<p>
+  Local Storage: {{ getStored() }}
+  <button (click)="clearStored()">Limpar</button>
+</p>
